@@ -12,7 +12,7 @@ export default function Home() {
             <div className="mb-12 md:mb-0 md:w-1/2">
               <h1 className="mb-6 text-4xl font-bold leading-tight text-zinc-900 dark:text-white md:text-5xl">
                 Software Engineer & <br />
-                <span className="text-blue-600 dark:text-blue-400">
+                <span className="text-green-600 dark:text-blue-400">
                   Full-Stack Developer
                 </span>
               </h1>
@@ -23,7 +23,7 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Link
                   href="/projects"
-                  className="inline-flex items-center justify-center rounded-lg bg-blue-600 px-5 py-3 text-base font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600"
+                  className="inline-flex items-center justify-center rounded-lg bg-green-600 px-5 py-3 text-base font-medium text-white transition-colors hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-green-600"
                 >
                   View My Work
                   <ArrowRightIcon className="ml-2 h-5 w-5" />
@@ -81,7 +81,7 @@ export default function Home() {
             </h2>
             <Link
               href="/projects"
-              className="flex items-center text-blue-600 dark:text-blue-400"
+              className="flex items-center text-green-600 dark:text-blue-400"
             >
               View All
               <ArrowRightIcon className="ml-1 h-4 w-4" />

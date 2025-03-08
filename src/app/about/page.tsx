@@ -13,7 +13,7 @@ export default function AboutPage() {
         <h1 className="mb-6 text-4xl font-bold text-zinc-900 dark:text-white">
           About Me
         </h1>
-        <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400"></div>
+        <div className="h-1 w-20 bg-green-600 dark:bg-blue-400"></div>
       </div>
 
       <div className="grid gap-12 md:grid-cols-3">

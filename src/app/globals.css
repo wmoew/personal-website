@@ -3,11 +3,21 @@
 :root {
   --foreground-rgb: 23, 23, 23;
   --background-rgb: 255, 255, 255;
+  --primary-rgb: 34, 197, 94; /* Changed from blue (59, 130, 246) to green */
+  --secondary-rgb: 107, 114, 128;
+  --accent-rgb: 217, 70, 239;
+  --card-bg-rgb: 245, 245, 245;
+  --border-rgb: 229, 231, 235;
 }
 
 .dark {
   --foreground-rgb: 237, 237, 237;
   --background-rgb: 10, 10, 10;
+  --primary-rgb: 74, 222, 128; /* Changed from blue (96, 165, 250) to green */
+  --secondary-rgb: 156, 163, 175;
+  --accent-rgb: 232, 121, 249;
+  --card-bg-rgb: 24, 24, 27;
+  --border-rgb: 55, 65, 81;
 }
 
 body {
@@ -51,7 +61,7 @@ body {
   }
   
   a {
-    color: theme("colors.blue.600");
+    color: theme("colors.green.600");
   }
   
   a:hover {
@@ -59,6 +69,18 @@ body {
   }
   
   .dark a {
-    color: theme("colors.blue.400");
+    color: theme("colors.green.400");
+  }
+  
+  .card {
+    background-color: rgb(var(--card-bg-rgb));
+    border: 1px solid rgb(var(--border-rgb));
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    transition: all 0.2s ease;
+  }
+  
+  .dark .card:hover {
+    box-shadow: 0 0 15px rgba(var(--primary-rgb), 0.3); /* This shadow will now be green */
   }
 }

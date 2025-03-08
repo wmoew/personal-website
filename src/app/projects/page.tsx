@@ -14,7 +14,7 @@ export default function ProjectsPage() {
         <h1 className="mb-6 text-4xl font-bold text-zinc-900 dark:text-white">
           My Projects
         </h1>
-        <div className="h-1 w-20 bg-blue-600 dark:bg-blue-400"></div>
+        <div className="h-1 w-20 bg-green-600 dark:bg-blue-400"></div>
       </div>
 
       <div className="mb-12">
@@ -62,7 +62,7 @@ export default function ProjectsPage() {
                     href={project.demoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                    className="inline-flex items-center text-sm font-medium text-green-600 hover:underline dark:text-blue-400"
                   >
                     Live Demo
                     <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
                     href={project.codeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                    className="inline-flex items-center text-sm font-medium text-green-600 hover:underline dark:text-blue-400"
                   >
                     View Code
                     <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
@@ -90,7 +90,7 @@ export default function ProjectsPage() {
 
 const projects = [
   {
-    title: "E-Commerce Platform",
+    title: "Database Monitoring System",
     description:
       "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
     image: "/project-placeholder-1.jpg",
