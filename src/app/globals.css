@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+:root {
+  --foreground-rgb: 23, 23, 23;
+  --background-rgb: 255, 255, 255;
+}
+
+.dark {
+  --foreground-rgb: 237, 237, 237;
+  --background-rgb: 10, 10, 10;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: rgb(var(--background-rgb));
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: theme("fontSize.4xl");
+  }
+  
+  @media (min-width: theme("screens.md")) {
+    h1 {
+      font-size: theme("fontSize.5xl");
+    }
+  }
+  
+  h2 {
+    font-size: theme("fontSize.3xl");
+  }
+  
+  @media (min-width: theme("screens.md")) {
+    h2 {
+      font-size: theme("fontSize.4xl");
+    }
+  }
+  
+  h3 {
+    font-size: theme("fontSize.2xl");
+  }
+  
+  @media (min-width: theme("screens.md")) {
+    h3 {
+      font-size: theme("fontSize.3xl");
+    }
+  }
+  
+  a {
+    color: theme("colors.blue.600");
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .dark a {
+    color: theme("colors.blue.400");
+  }
+}
