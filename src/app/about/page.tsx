@@ -8,40 +8,40 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-16">
+    <div className="container mx-auto px-4 py-16 dark:text-dark-text">
       <div className="mb-12">
-        <h1 className="mb-6 text-4xl font-bold text-zinc-900 dark:text-white">
+        <h1 className="mb-6 text-4xl font-bold text-dark-text">
           About Me
         </h1>
-        <div className="h-1 w-20 bg-green-600 dark:bg-blue-400"></div>
+        <div className="h-1 w-20 bg-blue-300"></div>
       </div>
 
       <div className="grid gap-12 md:grid-cols-3">
         <div className="md:col-span-1">
           <div className="sticky top-24">
-            <div className="relative mb-6 h-64 w-64 overflow-hidden rounded-lg md:h-80 md:w-full">
+            <div className="relative mb-6 h-64 w-64 overflow-hidden rounded-lg dark:border-zinc-700 md:h-80 md:w-full">
               <Image
                 src="/profile-placeholder.jpg"
                 alt="Developer"
                 fill
-                className="object-cover"
+                className="object-cover dark:brightness-90"
               />
             </div>
             <div className="space-y-4">
               <div>
-                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
+                <h3 className="text-sm font-medium text-zinc-500">
                   Email
                 </h3>
-                <p className="text-zinc-900 dark:text-white">
-                  hello@example.com
+                <p className="text-dark-text">
+                  nameng9189@gmail.com
                 </p>
               </div>
               <div>
-                <h3 className="text-sm font-medium text-zinc-500 dark:text-zinc-400">
+                <h3 className="text-sm font-medium text-zinc-500">
                   Location
                 </h3>
-                <p className="text-zinc-900 dark:text-white">
-                  San Francisco, CA
+                <p className="text-dark-text">
+                  New York, NY
                 </p>
               </div>
               <div className="flex space-x-4">
@@ -49,7 +49,7 @@ export default function AboutPage() {
                   href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                  className="dark:text-dark-text dark:hover:text-white"
                 >
                   GitHub
                 </Link>
@@ -57,65 +57,40 @@ export default function AboutPage() {
                   href="https://linkedin.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
+                  className="dark:text-dark-text dark:hover:text-white"
                 >
                   LinkedIn
-                </Link>
-                <Link
-                  href="https://twitter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-700 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-white"
-                >
-                  Twitter
                 </Link>
               </div>
             </div>
           </div>
         </div>
-
         <div className="md:col-span-2">
           <section className="mb-12">
-            <h2 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-white">
+            <h2 className="mb-4 text-2xl font-bold dark:text-dark-text">
               My Story
             </h2>
-            <div className="space-y-4 text-zinc-700 dark:text-zinc-300">
+            <div className="space-y-4 text-dark-text">
               <p>
-                Hello! I&apos;m a passionate software engineer with over 5 years of
-                experience building web applications and digital products. My
-                journey in software development began during my computer science
-                studies, where I discovered my love for creating elegant
-                solutions to complex problems.
-              </p>
-              <p>
-                Throughout my career, I&apos;ve worked with a diverse range of
-                technologies and frameworks, specializing in full-stack
-                development with a focus on JavaScript/TypeScript ecosystems. I&apos;m
-                particularly interested in building performant, accessible, and
-                user-friendly applications that solve real-world problems.
-              </p>
-              <p>
-                When I&apos;m not coding, you can find me exploring new technologies,
-                contributing to open-source projects, or sharing my knowledge
-                through blog posts and community events.
+              Hello! I&apos;m Moe, a software engineer who combines technical expertise with a strong background in product design. I work with React, Node.js, and DevOps tools like Prometheus and Grafana to build powerful, user-friendly applications. Having spent over five years designing solutions for healthcare, education, and fintech industries, I bring a unique perspective to development that prioritizes both function and thoughtful user experience. When I&apos;m not coding, I&apos;m exploring new technologies or working on projects that blend art and technology.
               </p>
             </div>
           </section>
 
           <section className="mb-12">
-            <h2 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-white">
+            <h2 className="mb-4 text-2xl font-bold text-dark-text">
               Experience
             </h2>
             <div className="space-y-8">
               {experiences.map((experience) => (
-                <div key={experience.company} className="border-l-2 border-zinc-200 pl-4 dark:border-zinc-700">
-                  <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
+                <div key={experience.company} className="border-l-2 border-blue-300 pl-4">
+                  <h3 className="text-xl font-bold text-dark-text">
                     {experience.role}
                   </h3>
-                  <p className="mb-2 text-zinc-700 dark:text-zinc-300">
+                  <p className="mb-2 text-dark-text">
                     {experience.company} | {experience.period}
                   </p>
-                  <ul className="list-disc space-y-2 pl-5 text-zinc-700 dark:text-zinc-300">
+                  <ul className="list-disc space-y-2 pl-5 text-dark-text">
                     {experience.responsibilities.map((responsibility, index) => (
                       <li key={index}>{responsibility}</li>
                     ))}
@@ -126,24 +101,24 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-bold text-zinc-900 dark:text-white">
+            <h2 className="mb-4 text-2xl font-bold text-dark-text">
               Education
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
-                  Bachelor of Science in Computer Science
+                <h3 className="text-xl font-bold text-dark-text">
+                Master of Science in Integrated Digital Media
                 </h3>
-                <p className="text-zinc-700 dark:text-zinc-300">
-                  University of Technology | 2014 - 2018
+                <p className="text-dark-text">
+                New York University, Tandon School of Engineering | 2018 - 2020
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-zinc-900 dark:text-white">
-                  Full-Stack Web Development Bootcamp
+                <h3 className="text-xl font-bold text-dark-text">
+                Bachelor of Engineering in Mathematical Sciences
                 </h3>
-                <p className="text-zinc-700 dark:text-zinc-300">
-                  Code Academy | 2019
+                <p className="text-dark-text">
+                Yokohama National University | 2014 - 2018
                 </p>
               </div>
             </div>
@@ -156,36 +131,44 @@ export default function AboutPage() {
 
 const experiences = [
   {
-    role: "Senior Software Engineer",
-    company: "Tech Innovations Inc.",
-    period: "2021 - Present",
+    role: "Software Engineer",
+    company: "Queryhawk (Open Source) - Database Monitoring Platform",
+    period: "Dec 2024 - Present",
     responsibilities: [
-      "Lead the development of a microservices architecture using Node.js and TypeScript",
-      "Implemented CI/CD pipelines that reduced deployment time by 40%",
-      "Mentored junior developers and conducted code reviews",
-      "Collaborated with product managers to define and prioritize features",
+      "Architected and implemented a containerized database monitoring solution using Docker, Grafana, and Prometheus, enabling dynamic PostgreSQL connection management and automated service discovery that reduced development cycles by 35% and allowed teams to identify performance bottlenecks",
+      "Developed the Automated Performance Analytics Platform utilizing Prometheus with OpenTelemetry integration that reduced monitoring setup time from hours to minutes while providing comprehensive, real-time performance insights for database query optimization",
+      "Built a Grafana monitoring solution with automated provisioning using YAML-based configuration files and Grafana Provisioning API, creating specialized dashboards that automatically set up data sources upon initialization, saving 3-4 hours per installation",
+      "Led the team to implement Material UI's theming system and styled components for creating a cohesive React wrapper around Grafana dashboards and Jaeger UI, resulting in a unified monitoring experience with consistent visual language",
     ],
   },
   {
-    role: "Full-Stack Developer",
-    company: "Digital Solutions LLC",
-    period: "2018 - 2021",
+    role: "Software Engineer",
+    company: "ArtExplorer - Interactive Museum Art Display",
+    period: "Nov 2024",
     responsibilities: [
-      "Developed and maintained multiple React applications with Redux state management",
-      "Built RESTful APIs using Express.js and MongoDB",
-      "Implemented responsive designs using modern CSS frameworks",
-      "Participated in agile development processes with bi-weekly sprints",
+      "Developed a responsive React application using custom hooks and context API to create an immersive browsing experience for the Metropolitan Museum of Art's public API",
+      "Implemented Redux Toolkit with createAsyncThunk for efficient API requests, reducing response times by 40% through selective data fetching",
+      "Built persistent storage solution with Redux-Persist and localStorage, enabling users to build and revisit their curated art gallery across browser sessions"
     ],
   },
   {
-    role: "Web Developer Intern",
-    company: "StartUp Co.",
-    period: "2017 - 2018",
+    role: "Senior Product Designer",
+    company: "Amount",
+    period: "Jun 2021 - Sep 2023",
     responsibilities: [
-      "Assisted in the development of company website using HTML, CSS, and JavaScript",
-      "Created interactive UI components with jQuery",
-      "Optimized website performance and fixed cross-browser compatibility issues",
-      "Participated in weekly team meetings and contributed to project planning",
+      "Built modular React design system with component composability and CSS-in-JS, enabling rapid white-labeling that cut client implementation from months to weeks",
+      "Partnered with backend engineers on data-driven UI components for complex decision engines, implementing attribute grouping that mirrored database relationships",
+      "Collaborated with engineers to transform complex loan evaluation workflows into an intuitive diagram-based platform using ReactFlow, enabling non-technical users to visually create and modify decision rules",
+    ],
+  },
+  {
+    role: "UX Designer",
+    company: "MIT Optics Lab",
+    period: "Feb 2021 - Jun 2021",
+    responsibilities: [
+      "Designed VR/desktop educational games in Unity3D/C# for fiber optics manufacturing training, reducing costly errors while complementing traditional factory instruction",
+      "Collaborated with physics professors to implement accurate optical interactions using Unity's physics engine and shader programming, balancing scientific precision with intuitive gameplay",
+      "Led 20+ user testing sessions with community college students, leveraging Unity Analytics and qualitative feedback to optimize interactions, resulting in 30% improved completion rates for training modules",
     ],
   },
 ]; 
