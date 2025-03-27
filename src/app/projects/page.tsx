@@ -19,9 +19,7 @@ export default function ProjectsPage() {
       </div>
       <div className="mb-12">
         <p className="max-w-3xl text-lg">
-          Here are some of the projects I&apos;ve worked on. Each project represents
-          different challenges and solutions I&apos;ve implemented using various
-          technologies and approaches.
+          Here are some of the projects I&apos;ve been working on recently.
         </p>
       </div>
 
