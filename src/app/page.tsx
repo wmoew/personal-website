@@ -1,6 +1,3 @@
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
-
 export default function Home() {
   return (
     <div className="flex flex-col">
