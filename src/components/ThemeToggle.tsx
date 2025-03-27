@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
-import { SunIcon, MoonIcon } from '@heroicons/react/24/outline';
+import { SunIcon, MoonIcon } from '@heroicons/react/24/solid';
 
 export function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -27,7 +27,7 @@ export function ThemeToggle() {
       {theme === 'dark' ? (
         <SunIcon className="h-5 w-5 text-yellow-300 transform transition-transform duration-300 hover:rotate-90" />
       ) : (
-        <MoonIcon className="h-5 w-5 text-indigo-700 transform transition-transform duration-300 hover:-rotate-90" />
+        <MoonIcon className="h-5 w-5 text-yellow-300 transform transition-transform duration-300 hover:-rotate-90" />
       )}
     </button>
   );
