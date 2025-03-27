@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import queryhawk_thumbnail from "./queryhawk_thumbnail.jpg";
@@ -57,17 +57,6 @@ export default function ProjectsPage() {
                 ))}
               </div>
               <div className="flex space-x-4">
-                {/* {project.demoUrl && (
-                  <Link
-                    href={project.demoUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-green-600 hover:underline dark:text-blue-400"
-                  >
-                    Live Demo
-                    <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
-                  </Link>
-                )} */}
                 {project.codeUrl && (
                   <Link
                     href={project.codeUrl}
@@ -88,14 +77,23 @@ export default function ProjectsPage() {
   );
 }
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  image: StaticImageData;
+  technologies: string[];
+  codeUrl: string;
+  demoUrl?: string; // Optional property
+}
+
+const projects: Project[]= [
   {
     title: "Database Monitoring System",
     description:
       "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
     image: queryhawk_thumbnail,
     technologies: ["React", "TypeScript", "PostgreSQL", "Docker", "OpenTelemetry", "Prometheus", "Grafana"],
-    // demoUrl: "https://example.com/demo1",
+    demoUrl: "",
     codeUrl: "https://github.com/oslabs-beta/QueryHawk",
   },
 //  
@@ -105,7 +103,7 @@ const projects = [
       "A responsive React application using custom hooks and context API to create an immersive browsing experience for the Metropolitan Museum of Art's public API.",
     image: art_thumbnail,
     technologies: ["React", "Node.js"],
-    // demoUrl: "https://github.com/wmoew/art-homepage",
+    demoUrl: "",
     codeUrl: "https://github.com/wmoew/art-homepage",
   },
   // {
