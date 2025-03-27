@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                 ))}
               </div>
               <div className="flex space-x-4">
-                {project.demoUrl && (
+                {/* {project.demoUrl && (
                   <Link
                     href={project.demoUrl}
                     target="_blank"
@@ -67,7 +67,7 @@ export default function ProjectsPage() {
                     Live Demo
                     <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
                   </Link>
-                )}
+                )} */}
                 {project.codeUrl && (
                   <Link
                     href={project.codeUrl}
