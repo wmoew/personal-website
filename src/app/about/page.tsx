@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import mypic from "./mypic.jpg";
 
 export const metadata = {
   title: "About Me | Software Engineer Portfolio",
@@ -8,23 +9,19 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto px-4 py-16 dark:text-dark-text">
-      <div className="mb-12">
-        <h1 className="mb-6 text-4xl font-bold text-dark-text">
-          About Me
-        </h1>
-        <div className="h-1 w-20 bg-blue-300"></div>
-      </div>
+    <div className="container mx-auto px-4 py-16">
+        <div className="mb-12">
+        </div>
 
       <div className="grid gap-12 md:grid-cols-3">
         <div className="md:col-span-1">
           <div className="sticky top-24">
-            <div className="relative mb-6 h-64 w-64 overflow-hidden rounded-lg dark:border-zinc-700 md:h-80 md:w-full">
+            <div className="relative mb-6 h-48 w-48 overflow-hidden rounded-lg border-2 border-blue-300 md:h-60 md:w-48">
               <Image
-                src="/profile-placeholder.jpg"
+                src={mypic}
                 alt="Developer"
                 fill
-                className="object-cover dark:brightness-90"
+                className="object-cover"
               />
             </div>
             <div className="space-y-4">
@@ -32,7 +29,7 @@ export default function AboutPage() {
                 <h3 className="text-sm font-medium text-zinc-500">
                   Email
                 </h3>
-                <p className="text-dark-text">
+                <p className="">
                   nameng9189@gmail.com
                 </p>
               </div>
@@ -46,18 +43,17 @@ export default function AboutPage() {
               </div>
               <div className="flex space-x-4">
                 <Link
-                  href="https://github.com"
+                  href="https://github.com/wmoew"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="dark:text-dark-text dark:hover:text-white"
                 >
                   GitHub
                 </Link>
                 <Link
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/mn1098/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="dark:text-dark-text dark:hover:text-white"
+                  className=""
                 >
                   LinkedIn
                 </Link>
@@ -67,30 +63,30 @@ export default function AboutPage() {
         </div>
         <div className="md:col-span-2">
           <section className="mb-12">
-            <h2 className="mb-4 text-2xl font-bold dark:text-dark-text">
+            {/* <h2 className="mb-4 text-xl font-semibold">
               My Story
-            </h2>
-            <div className="space-y-4 text-dark-text">
+            </h2> */}
+            <div className="space-y-4">
               <p>
-              Hello! I&apos;m Moe, a software engineer who combines technical expertise with a strong background in product design. I work with React, Node.js, and DevOps tools like Prometheus and Grafana to build powerful, user-friendly applications. Having spent over five years designing solutions for healthcare, education, and fintech industries, I bring a unique perspective to development that prioritizes both function and thoughtful user experience. When I&apos;m not coding, I&apos;m exploring new technologies or working on projects that blend art and technology.
+              Hi! I&apos;m Moe, a software engineer passionate about product design. I build user-friendly applications using React, Node.js, and DevOps tools like Prometheus and Grafana. Over five years, I&apos;ve designed solutions for fintech, healthcare, and education sectors, always balancing functionality with thoughtful user experience. Outside of coding, I enjoy watching movies while snuggling with my dog - recently I loved &quot;Flow 🐱&quot;.
               </p>
             </div>
           </section>
 
           <section className="mb-12">
-            <h2 className="mb-4 text-2xl font-bold text-dark-text">
+            <h2 className="mb-4 text-2xl font-semibold">
               Experience
             </h2>
             <div className="space-y-8">
               {experiences.map((experience) => (
-                <div key={experience.company} className="border-l-2 border-blue-300 pl-4">
-                  <h3 className="text-xl font-bold text-dark-text">
+                <div key={experience.company} className="border-l-1 border-blue-300 pl-4">
+                  <h3 className="text-xl font-semibold">
                     {experience.role}
                   </h3>
-                  <p className="mb-2 text-dark-text">
+                  <p className="mb-2">
                     {experience.company} | {experience.period}
                   </p>
-                  <ul className="list-disc space-y-2 pl-5 text-dark-text">
+                  <ul className="list-disc space-y-2 pl-5">
                     {experience.responsibilities.map((responsibility, index) => (
                       <li key={index}>{responsibility}</li>
                     ))}
@@ -101,23 +97,23 @@ export default function AboutPage() {
           </section>
 
           <section>
-            <h2 className="mb-4 text-2xl font-bold text-dark-text">
+            <h2 className="mb-4 text-2xl font-semibold">
               Education
             </h2>
             <div className="space-y-4">
               <div>
-                <h3 className="text-xl font-bold text-dark-text">
+                <h3 className="text-xl font-semibold">
                 Master of Science in Integrated Digital Media
                 </h3>
-                <p className="text-dark-text">
+                <p className="">
                 New York University, Tandon School of Engineering | 2018 - 2020
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-bold text-dark-text">
+                <h3 className="text-xl font-semibold">
                 Bachelor of Engineering in Mathematical Sciences
                 </h3>
-                <p className="text-dark-text">
+                <p className="">
                 Yokohama National University | 2014 - 2018
                 </p>
               </div>

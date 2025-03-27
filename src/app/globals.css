@@ -8,15 +8,42 @@
   --accent: #c4b8f6;
   --card-bg: #f5f5f5;
   --border: #e5e7eb;
+  --link-hover: #5fb4ff;
 }
 
 .dark {
   --foreground: #ededed;
-  --background: #111111;
+  --background: #212121;
   --primary: #c6dcef;
   --accent: #c4b8f6;
   --card-bg: #18181b;
-  --border: #374151;
+  --link: #c6dcef;
+  --link-hover: #5fb4ff;
+  --link-underline: #c6dcef;
+  --link-underline-hover: #c6dcef;
+  --link-underline-dark: #c6dcef;
+  --link-underline-dark-hover: #c6dcef;
+  --link-underline-light: #c6dcef;
+  --link-underline-light-hover: #c6dcef;  
+}
+.dark .dark-border {
+  border-color: #5c5c5c !important;
+}
+@keyframes rainbow-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.rainbow-text-hover:hover {
+  background: linear-gradient(to right, 
+    #ff0000, #ff8000, #ffff00, #00ff80, 
+    #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
+  background-size: 200% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: rainbow-text 2s linear infinite;
 }
 
 body {
@@ -58,7 +85,12 @@ body {
       font-size: theme("fontSize.3xl");
     }
   }
-  
+  .button:hover {
+    background-color: var(--primary);
+  }
+  .dark .button:hover {
+    background-color: var(--border-dark);
+  }
   a {
     color: theme("colors.zinc-900");
   }
@@ -66,9 +98,15 @@ body {
   a:hover {
     text-decoration: underline;
   }
-  
+  .dark {
+    --header-border: #e5e7eb; /* Keep the same color in dark mode */
+  }
   .dark a {
-    color: theme("colors.white");
+    color: var(--foreground);
+  }
+  .dark a:hover {
+    color: white;
+    text-decoration: underline;
   }
   
   .card {
@@ -78,8 +116,9 @@ body {
     padding: 1.5rem;
     transition: all 0.2s ease;
   }
-  
-  .dark .card:hover {
-    box-shadow: 0 0 15px rgba(74, 222, 128, 0.3); /* Using the dark mode primary color */
+  .dark .dark-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-dark);
   }
 }
+

@@ -23,7 +23,7 @@ export default function RootLayout({
       >
         <Providers>
           <Header />
-          <main className="flex-grow">{children}</main>
+          <main className="flex-1 overflow-auto">{children}</main>
           <Footer />
         </Providers>
       </body>

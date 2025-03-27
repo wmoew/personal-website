@@ -26,7 +26,6 @@ module.exports = {
           900: '#171717',
           950: '#0a0a0a',
         },
-        // Updated to use the new CSS variables without -rgb suffix
         primary: 'var(--primary)',
         secondary: 'var(--secondary)',
         accent: 'var(--accent)',

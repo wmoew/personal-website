@@ -16,11 +16,11 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/75 backdrop-blur transition-colors duration-300 
-                      dark:border-zinc-700 dark:bg-indigo-600/60 dark:shadow-lg dark:shadow-zinc-900/40">
+    <header className="h-auto sticky top-0 w-full border-b-1 border-zinc-200 dark-border
+    z-50 backdrop-blur transition-colors duration-300">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 transition-transform duration-300 hover:scale-105">
-          <span className="text-xl font-bold text-zinc-900 dark:text-zinc-100">
+        <Link href="/" className="flex items-center space-x-2 transition-transform duration-300">
+          <span className="text-base">
             Moe Na
           </span>
         </Link>
@@ -31,9 +31,7 @@ export function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-zinc-700 transition-all duration-300 
-                        hover:text-zinc-900 hover:scale-105
-                        dark:text-zinc-200 dark:hover:text-white dark:hover:glow-sm"
+              className="text-base transition-all"
             >
               {link.label}
             </Link>
@@ -46,8 +44,7 @@ export function Header() {
           <ThemeToggle />
           <button
             type="button"
-            className="ml-2 p-2 text-zinc-700 dark:text-zinc-300 transition-colors duration-300
-                      hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-full"
+            className="ml-2 p-2 rounded-full"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -76,7 +73,7 @@ export function Header() {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="py-2 text-base font-medium text-zinc-700 
+                    className="py-2 text-base text-zinc-700 
                               transition-all duration-300 
                               hover:text-zinc-900 hover:pl-2
                               dark:text-zinc-200 dark:hover:text-white"
