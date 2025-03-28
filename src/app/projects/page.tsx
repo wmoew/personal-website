@@ -88,7 +88,7 @@ const projects: Project[]= [
   {
     title: "Database Monitoring System",
     description:
-      "A full-featured e-commerce platform with product management, cart functionality, and payment processing.",
+      "A dev tool that monitors and visualizes key SQL metrics to help users improve database and query performance.",
     image: queryhawk_thumbnail,
     technologies: ["React", "TypeScript", "PostgreSQL", "Docker", "OpenTelemetry", "Prometheus", "Grafana"],
     demoUrl: "",
@@ -101,6 +101,15 @@ const projects: Project[]= [
       "A responsive React application using custom hooks and context API to create an immersive browsing experience for the Metropolitan Museum of Art's public API.",
     image: art_thumbnail,
     technologies: ["React", "Node.js"],
+    demoUrl: "",
+    codeUrl: "https://github.com/wmoew/art-homepage",
+  },
+  {
+    title: "Banking Rule Configuration Tool",
+    description:
+      "A tool helps set up and manage the rules, criteria, and processes for loan approvals, ensuring that loans are granted based on predefined conditions and risk assessments.",
+    image: art_thumbnail,
+    technologies: ["Figma", "Design System", "Github", "SQL", "Notion"],
     demoUrl: "",
     codeUrl: "https://github.com/wmoew/art-homepage",
   },
