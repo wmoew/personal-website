@@ -104,15 +104,15 @@ const projects: Project[]= [
     demoUrl: "",
     codeUrl: "https://github.com/wmoew/art-homepage",
   },
-  {
-    title: "Banking Rule Configuration Tool",
-    description:
-      "A tool helps set up and manage the rules, criteria, and processes for loan approvals, ensuring that loans are granted based on predefined conditions and risk assessments.",
-    image: art_thumbnail,
-    technologies: ["Figma", "Design System", "Github", "SQL", "Notion"],
-    demoUrl: "",
-    codeUrl: "https://github.com/wmoew/art-homepage",
-  },
+  // {
+  //   title: "Banking Rule Configuration Tool",
+  //   description:
+  //     "A tool helps set up and manage the rules, criteria, and processes for loan approvals, ensuring that loans are granted based on predefined conditions and risk assessments.",
+  //   image: art_thumbnail,
+  //   technologies: ["Figma", "Design System", "Github", "SQL", "Notion"],
+  //   demoUrl: "",
+  //   codeUrl: "https://github.com/wmoew/art-homepage",
+  // },
   // {
   //   title: "Rule Configuration Tool for Banks",
   //   description:
