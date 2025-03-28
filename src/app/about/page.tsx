@@ -68,7 +68,7 @@ export default function AboutPage() {
             </h2> */}
             <div className="space-y-4">
               <p>
-              Hi! I&apos;m Moe, a software engineer passionate about product design. I build user-friendly applications using React, Node.js, and DevOps tools like Prometheus and Grafana. Over five years, I&apos;ve designed solutions for fintech, healthcare, and education sectors, always balancing functionality with thoughtful user experience. Outside of coding, I enjoy watching movies while snuggling with my dog - recently I loved &quot;Flow 🐱&quot;.
+              Hi! I&apos;m Moe, a software engineer passionate about product design. I build user-friendly applications using React, Node.js, and DevOps tools like Prometheus and Grafana. Over five years, I&apos;ve designed solutions for fintech, healthcare, and education sectors, always balancing functionality with thoughtful user experience. Outside of coding, I enjoy films with my dog Puff — we both loved &quot;Flow&quot; recently! Open to discussing new opportunities that combine technology with thoughtful design.
               </p>
             </div>
           </section>

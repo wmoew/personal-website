@@ -27,7 +27,7 @@ export default function ProjectsPage() {
         {projects.map((project) => (
           <div
             key={project.title}
-            className="overflow-hidden rounded-lg border border-zinc-200 bg-white dark-card dark-border transition-all"
+            className="overflow-hidden rounded-lg border border-zinc-200 dark-card dark-border transition-all"
           >
             <div className="relative h-48 w-full">
               <Image
@@ -38,10 +38,10 @@ export default function ProjectsPage() {
               />
             </div>
             <div className="p-6">
-              <h3 className="mb-2 text-xl font-semibold text-zinc-900">
+              <h3 className="mb-2 text-xl font-semibold">
                 {project.title}
               </h3>
-              <p className="mb-4 text-zinc-700">
+              <p className="mb-4">
                 {project.description}
               </p>
               <div className="mb-4 flex flex-wrap gap-2">
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
                     href={project.codeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-green-600 hover:underline dark:text-blue-400"
+                    className="inline-flex items-center text-sm font-medium hover:underline"
                   >
                     View Code
                     <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />

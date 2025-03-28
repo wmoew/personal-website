@@ -7,7 +7,7 @@ export function Footer() {
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:items-start">
           <p className="text-base">
-              Built by Moe Na with Next.js, Tailwind CSS, and <span className="text-red-500 animate-pulse">❤️</span>
+              Built by Moe Na with Next.js, Tailwind CSS, and <span className="text-red-500 animate-pulse">💙</span>
             </p>
           </div>
           
