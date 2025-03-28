@@ -9,6 +9,9 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Software Engineer Portfolio",
   description: "Personal website and portfolio for a software engineer",
+  icons: {
+    icon: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({
