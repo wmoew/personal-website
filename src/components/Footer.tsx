@@ -2,13 +2,13 @@ import Link from 'next/link';
 
 export function Footer() {
   return (
-    <footer className="border-t border-zinc-200 dark-border transition-colors duration-300 mt-auto">
+    <footer className="transition-colors duration-300 mt-auto">
       <div className="container mx-auto px-4 py-8">
         <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
           <div className="flex flex-col items-center gap-2 md:items-start">
-          <p className="text-base">
+          {/* <p className="text-base">
               Built by Moe Na with Next.js, Tailwind CSS, and <span className="text-red-500 animate-pulse">💙</span>
-            </p>
+          </p> */}
           </div>
           
           <div className="flex space-x-6">

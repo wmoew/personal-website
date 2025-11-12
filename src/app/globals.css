@@ -1,124 +1,209 @@
 @import "tailwindcss";
 
+
+/* ===================================
+  CSS CUSTOM PROPERTIES (VARIABLES)
+  =================================== */
+
+/* Light Theme Colors */
 :root {
-  --foreground: #171717;
-  --background: #ffffff;
-  --primary: #c6dcef;
-  --secondary: #242d83;
-  --accent: #c4b8f6;
-  --card-bg: #f5f5f5;
-  --border: #e5e7eb;
-  --link-hover: #5fb4ff;
+  /* Text & Background */
+  --foreground: #171717;          /* Main text color - dark gray */
+  --background: #ffffff;          /* Page background - white */
+  
+  /* Brand Colors */
+  --primary: #c6dcef;            /* Primary color - light blue */
+  --secondary: #242d83;          /* Secondary color - dark blue */
+  --accent: #c4b8f6;             /* Accent color - light purple */
+  
+  /* Component Colors */
+  --card-bg: #f5f5f5;            /* Card backgrounds - light gray */
+  --border: #e5e7eb;             /* Border color - light gray */
+  
+  /* Interactive States */
+  --link-hover: #5fb4ff;         /* Link hover color - bright blue */
 }
 
+/* Dark Theme Colors */
 .dark {
-  --foreground: #ededed;
-  --background: #212121;
-  --primary: #c6dcef;
-  --accent: #c4b8f6;
-  --card-bg: #18181b;
-  --link: #c6dcef;
-  --link-hover: #5fb4ff;
-  --link-underline: #c6dcef;
+  /* Text & Background */
+  --foreground: #ededed;          /* Main text color - light gray */
+  --background: #212121;          /* Page background - dark gray */
+  
+  /* Brand Colors (some remain same as light theme) */
+  --primary: #c6dcef;            /* Primary color - light blue */
+  --accent: #c4b8f6;             /* Accent color - light purple */
+  
+  /* Component Colors */
+  --card-bg: #18181b;            /* Card backgrounds - very dark gray */
+  
+  /* Link Colors (currently unused in styles) */
+  --link: #c6dcef;               /* Base link color */
+  --link-hover: #5fb4ff;         /* Link hover color */
+  --link-underline: #c6dcef;     /* Link underline variations */
   --link-underline-hover: #c6dcef;
   --link-underline-dark: #c6dcef;
   --link-underline-dark-hover: #c6dcef;
   --link-underline-light: #c6dcef;
   --link-underline-light-hover: #c6dcef;  
 }
+
+/* ===================================
+  DARK MODE OVERRIDES
+  =================================== */
+
+/* Force border color for dark mode elements */
 .dark .dark-border {
-  border-color: #5c5c5c !important;
+  border-color: #5c5c5c !important; /* Medium gray border */
 }
+
+/* ===================================
+  ANIMATIONS
+  =================================== */
+
+/* Rainbow gradient animation keyframes */
 @keyframes rainbow-text {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
+/* open to work */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
 
-.rainbow-text-hover:hover {
+.animate-scroll-left {
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Rainbow text effect */
+.rainbow-text {
+  /* Full spectrum gradient */
   background: linear-gradient(to right, 
-    #ff0000, #ff8000, #ffff00, #00ff80, 
-    #00ffff, #0080ff, #0000ff, #8000ff, #ff00ff, #ff0080, #ff0000);
-  background-size: 200% auto;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  animation: rainbow-text 2s linear infinite;
+  #fae37d, #7f5afa, #62e8f5, #f7af89);
+  background-size: 200% auto;        /* Double width for animation */
+  background-clip: text;             /* Clip gradient to text */
+  -webkit-background-clip: text;     /* Webkit prefix for Safari */
+  color: transparent;                /* Hide text color to show gradient */
+  animation: rainbow-text 2s linear infinite; /* Continuous animation */
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-}
-
+/* ===================================
+  TAILWIND BASE LAYER OVERRIDES
+  =================================== */
 @layer base {
-  h1, h2, h3, h4, h5, h6 {
+  /* --- Typography --- */
+  /* Set the DEFAULT font for the body to mono */
+  body {
+    font-family: theme("fontFamily.mono");
+    color: var(--foreground);
+    background: var(--background);
+  }
+  
+
+  /* OVERRIDE all headings to use your serif font.
+       This will apply to h1, h2, h3, etc. */
+  h1, h2 {
+    font-family: var(--font-eb-garamond), 'EB Garamond', serif;
     font-weight: bold;
   }
   
+  /* Responsive heading sizes */
   h1 {
-    font-size: theme("fontSize.4xl");
+    font-size: theme("fontSize.4xl"); /* 2.25rem */
   }
   
   @media (min-width: theme("screens.md")) {
     h1 {
-      font-size: theme("fontSize.5xl");
+      font-size: theme("fontSize.5xl"); /* 3rem */
     }
   }
   
   h2 {
-    font-size: theme("fontSize.3xl");
+    font-size: theme("fontSize.3xl"); /* 1.875rem */
   }
   
   @media (min-width: theme("screens.md")) {
     h2 {
-      font-size: theme("fontSize.4xl");
+      font-size: theme("fontSize.4xl"); /* 2.25rem */
     }
   }
   
   h3 {
-    font-size: theme("fontSize.2xl");
+    font-size: theme("fontSize.2xl"); /* 1.5rem */
   }
   
   @media (min-width: theme("screens.md")) {
     h3 {
-      font-size: theme("fontSize.3xl");
+      font-size: theme("fontSize.3xl"); /* 1.875rem */
     }
   }
+  
+  /* --- Interactive Elements --- */
+  
+  /* Button hover state */
   .button:hover {
     background-color: var(--primary);
   }
+  
+  /* Dark mode button hover */
   .dark .button:hover {
-    background-color: var(--border-dark);
+    background-color: var(--border-dark); /* Note: --border-dark not defined */
   }
+  
+  /* --- Link Styles --- */
+  
+  /* Light mode links */
   a {
-    color: theme("colors.zinc-900");
+    color: theme("colors.zinc-900"); /* Tailwind's zinc-900 */
   }
   
   a:hover {
     text-decoration: underline;
   }
-  .dark {
-    --header-border: #e5e7eb; /* Keep the same color in dark mode */
-  }
+  
+  /* Dark mode links */
   .dark a {
     color: var(--foreground);
   }
+  
   .dark a:hover {
     color: white;
     text-decoration: underline;
   }
   
+  /* --- Component Styles --- */
+  
+  /* Header border (unused variable) */
+  .dark {
+    --header-border: #e5e7eb; /* Same as light mode */
+  }
+  
+  /* Card component */
   .card {
     background-color: var(--card-bg);
     border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    transition: all 0.2s ease;
+    border-radius: 0.5rem;           /* Rounded corners */
+    padding: 1.5rem;                 /* Internal spacing */
+    transition: all 0.2s ease;       /* Smooth transitions */
   }
+  
+  /* Dark mode card */
   .dark .dark-card {
     background-color: var(--card-bg);
-    border: 1px solid var(--border-dark);
+    border: 1px solid var(--border-dark); /* Note: --border-dark not defined */
   }
 }
 
+/* ===================================
+  TODO/ISSUES TO FIX:
+  1. Add font-family declaration to body
+  2. Define --border-dark variable
+  3. Fix Tailwind imports
+  4. Remove unused link variables or implement them
+  =================================== */

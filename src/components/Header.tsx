@@ -6,27 +6,24 @@ import { useState } from 'react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { motion, AnimatePresence } from 'framer-motion';
 
+//navbar
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
 ];
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="h-auto sticky top-0 w-full border-b-1 border-zinc-200 dark-border
-    z-50 backdrop-blur transition-colors duration-300">
+    <header className="h-auto sticky top-0 w-full z-50 backdrop-blur transition-colors duration-300">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
-        <Link href="/" className="flex items-center space-x-2 transition-transform duration-300">
+        <Link href="/" className="flex items-center space-x-8 transition-transform duration-300">
           <span className="text-base">
             Moe Na
           </span>
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-16">
           {navLinks.map((link) => (
             <Link
               key={link.href}
@@ -64,8 +61,7 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden border-t border-zinc-200 dark:border-zinc-700 
-                      bg-white dark:bg-zinc-950 shadow-lg dark:shadow-zinc-900/50"
+            className="md:hidden bg-white dark:bg-zinc-950 shadow-lg dark:shadow-zinc-900/50"
           >
             <div className="container mx-auto px-4 py-3">
               <nav className="flex flex-col space-y-3">

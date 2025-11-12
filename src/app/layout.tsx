@@ -1,10 +1,18 @@
 import type { Metadata } from "next";
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
+import { EB_Garamond } from 'next/font/google';
 import "./globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+
+// Configure EB Garamond
+const ebGaramond = EB_Garamond({ 
+  subsets: ['latin'],
+  variable: '--font-eb-garamond',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: "Software Engineer Portfolio",
@@ -22,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${GeistSans.className} ${GeistMono.variable} antialiased min-h-screen flex flex-col`}
+        className={`${GeistSans.className} ${GeistMono.variable} ${ebGaramond.variable} antialiased min-h-screen flex flex-col`}
       >
         <Providers>
           <Header />

@@ -6,12 +6,12 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
+    fontFamily: {
+      sans: ['var(--font-geist-sans)', 'sans-serif'],
+      serif: ['"Times New Roman"', 'Times', 'serif'],
+      mono: ['var(--font-geist-mono)', 'monospace'],
+    },
     extend: {
-      fontFamily: {
-        sans: ['var(--font-geist-mono)'],
-        mono: ['var(--font-geist-mono)'],
-        DEFAULT: ['var(--font-geist-mono)'],
-      },
       colors: {
         dark: {
           text: '#CFE4F3', // light blue color
