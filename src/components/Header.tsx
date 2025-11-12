@@ -22,19 +22,6 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-16">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-base transition-all"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <ThemeToggle />
-        </nav>
 
         {/* Mobile Navigation Toggle */}
         <div className="flex items-center md:hidden">
