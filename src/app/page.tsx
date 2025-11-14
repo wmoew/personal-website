@@ -60,13 +60,13 @@ export default function Home() {
           </div>
         </div>
         <div className="md:col-span-2">
-          {/* Hero Section with minimal styling */}
-        <section className="flex items-center h-auto py-20">
-        <div className="container mx-auto">
-              <h2 className="text-4xl md:text-5xl font-normal mb-24 font-[family-name:var(--font-eb-garamond)]">
-              Hi! I&apos;m Moe, a software engineer. I build applications
+          {/* Hero Section */}
+        <section className="flex items-center h-auto py-8 md:py-20">
+        <div className="container w-full">
+              <h2 className="text-3xl md:text-4xl font-normal mb-24">
+              Hi! I&apos;m Moe, a software engineer. I build applications that
               <span className="rainbow-text">
-              {""} that work well and feel good to use
+              {""} work well and feel good to use
               </span>. 
               I work with React, Node.js, and monitoring/DevOps tools, with experience across fintech, healthcare, and education. I&apos;m currently open to new opportunities.
               </h2>
@@ -75,7 +75,7 @@ export default function Home() {
 
         {/* Skills/Technologies Section */}
         <section className="mb-12">
-          <h2 className="text-4xl md:text-5xl font-normal mb-16 font-[family-name:var(--font-eb-garamond)]">
+          <h2 className="text-3xl md:text-4xl font-normal mb-16">
             Technologies
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pl-4">
@@ -104,7 +104,7 @@ export default function Home() {
 
 {/*resume*/}
           <section className="mb-12">
-            <h2 className="text-4xl md:text-5xl font-normal mb-16 font-[family-name:var(--font-eb-garamond)]">Experience
+            <h2 className="text-3xl md:text-4xl font-normal mb-16">Experience
             </h2>
             <div className="space-y-8">
               {experiences.map((experience) => (
@@ -125,7 +125,9 @@ export default function Home() {
                     ): (<span>{experience.company}</span>)}
                     
                     {/* Show the period */}
+                    <span className="block sm:inline sm:ml-2">
                     <span className="ml-2">| {experience.period}</span>
+                    </span>
                   </p>
                   
                   <ul className="space-y-2 pl-5 text-base">
@@ -142,7 +144,7 @@ export default function Home() {
           </section>
 
           <section>
-            <h2 className="text-4xl md:text-5xl font-normal mb-16 font-[family-name:var(--font-eb-garamond)]">
+            <h2 className="text-3xl md:text-4xl font-normal mb-16 font-['EB_Garamond']">
             Education
             </h2>
             <div className="space-y-4">

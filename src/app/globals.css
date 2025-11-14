@@ -85,13 +85,14 @@
 .rainbow-text {
   /* Full spectrum gradient */
   background: linear-gradient(to right, 
-  #fae37d, #7f5afa, #62e8f5, #f7af89);
+  #ffed9d, #f7af89, #7f5afa, #6295f5);
   background-size: 200% auto;        /* Double width for animation */
   background-clip: text;             /* Clip gradient to text */
   -webkit-background-clip: text;     /* Webkit prefix for Safari */
   color: transparent;                /* Hide text color to show gradient */
   animation: rainbow-text 2s linear infinite; /* Continuous animation */
 }
+
 
 /* ===================================
   TAILWIND BASE LAYER OVERRIDES
