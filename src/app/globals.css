@@ -85,7 +85,7 @@
 .rainbow-text {
   /* Full spectrum gradient */
   background: linear-gradient(to right, 
-  #ffed9d, #f7af89, #7f5afa, #6295f5);
+  #ffed9d, #ffae83, #7f5afa, #6ac6ff);
   background-size: 200% auto;        /* Double width for animation */
   background-clip: text;             /* Clip gradient to text */
   -webkit-background-clip: text;     /* Webkit prefix for Safari */
@@ -161,23 +161,16 @@
   
   /* Light mode links */
   a {
-    color: theme("colors.zinc-900"); /* Tailwind's zinc-900 */
+    text-decoration: underline; 
+    color: theme("colors.zinc-900"); 
+  }
+  .dark a {
+    color: var(--foreground); 
   }
   
   a:hover {
     text-decoration: underline;
   }
-  
-  /* Dark mode links */
-  .dark a {
-    color: var(--foreground);
-  }
-  
-  .dark a:hover {
-    color: white;
-    text-decoration: underline;
-  }
-  
   /* --- Component Styles --- */
   
   /* Header border (unused variable) */

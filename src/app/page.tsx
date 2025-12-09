@@ -1,12 +1,9 @@
+'use client';
+
 import Image from "next/image";
 import Link from "next/link";
 import mypic from "./me.jpeg";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-
-export const metadata = {
-  title: "Moe | Software Engineer Portfolio",
-  description: "Learn more about my background, skills, and experience as a software engineer.",
-};
 
 export default function Home() {
   return (
@@ -101,47 +98,63 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/*resume*/}
+        <section className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-normal mb-16">Experience
+          </h2>
+          <div className="space-y-8">
+          {experiences.map((experience, index) => (
+            <div key={`${experience.company}-${index}`} className="pl-4">
+                <h3 className="text-base font-normal mb-2">
+                  {experience.role}
+                </h3>
+                <p className="text-sm mb-2 font-medium text-zinc-500">
+  {/* Show the company name and url if available */}
+  {experience.codeUrl ? (
+    <Link
+      href={experience.codeUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center text-sm hover:underline ml-2"
+    >
+      {experience.company}
+      <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
+    </Link>
+  ) : experience.portfolioUrl ? (
+    // Note: Use experience.portfolioUrl for the href here
+    <Link
+      href={experience.portfolioUrl} 
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-flex items-center text-sm hover:underline ml-2" // Changed hover:text-blue-600 to hover:underline for consistency
+      aria-label="View Portfolio"
+    >
+      {experience.company}
+      <ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
+    </Link>
+  ) : (
+    // No link, just company name
+    <span>{experience.company}</span>
+  )}
 
-{/*resume*/}
-          <section className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-normal mb-16">Experience
-            </h2>
-            <div className="space-y-8">
-              {experiences.map((experience) => (
-                <div key={experience.company} className="pl-4">
-                  <h3 className="text-base font-normal mb-2">
-                    {experience.role}
-                  </h3>
-                  <p className="text-sm mb-2 font-medium text-zinc-500">
-                    {/* Show the company name and url if available*/}   
-                    {experience.codeUrl ?
-                      (<Link 
-                        href={experience.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center text-sm hover:underline ml-2"
-                      >{experience.company}<ArrowTopRightOnSquareIcon className="ml-1 h-4 w-4" />
-                      </Link>
-                    ): (<span>{experience.company}</span>)}
-                    
-                    {/* Show the period */}
-                    <span className="block sm:inline sm:ml-2">
-                    <span className="ml-2">| {experience.period}</span>
-                    </span>
-                  </p>
-                  
-                  <ul className="space-y-2 pl-5 text-base">
-                    {experience.responsibilities.map((responsibility, index) => (
-                      <li key={index} className="flex">
-                      <span className="mr-2">-</span>
-                      <span>{responsibility}</span>
-                    </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+  {/* Show the period (Always displayed) */}
+  <span className="block sm:inline sm:ml-2">
+    <span className="ml-2">| {experience.period}</span>
+  </span>
+</p>
+
+              <ul className="space-y-2 pl-5 text-base">
+                {experience.responsibilities.map((responsibility, index) => (
+                  <li key={index} className="flex">
+                    <span className="mr-2">-</span>
+                    <span>{responsibility}</span>
+                  </li>
+                ))}
+              </ul>
+              </div>
+            ))}
             </div>
-          </section>
+        </section>
 
           <section>
             <h2 className="text-3xl md:text-4xl font-normal mb-16 font-['EB_Garamond']">
@@ -165,17 +178,25 @@ export default function Home() {
                 </p>
               </div>
             </div>
-          </section>
+            </section>
         </div>
       </div>
     </div>
   );
 }
+interface Experience {
+  role: string;
+  company: string;
+  codeUrl?: string;
+  portfolioUrl?: string;
+  period: string;
+  responsibilities: string[];
+}
 
-const experiences = [
+const experiences: Experience[] = [
   {
     role: "Software Engineer",
-    company: "Queryhawk - Database Monitoring Platform",
+    company: "QueryHawk",
     codeUrl: "https://github.com/oslabs-beta/QueryHawk",
     period: "Dec 2024 - Present",
     responsibilities: [
@@ -199,6 +220,7 @@ const experiences = [
   {
     role: "Senior Product Designer",
     company: "Amount",
+    portfolioUrl: "/design-work.pdf",
     period: "Jun 2021 - Sep 2023",
     responsibilities: [
       "Built modular React design system with component composability and CSS-in-JS, enabling rapid white-labeling that cut client implementation from months to weeks",
