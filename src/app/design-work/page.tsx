@@ -50,7 +50,7 @@ export default function DesignCaseStudyPage() {
   return (
     <div className="min-h-screen bg-gray-100">
       <iframe
-        src="/design-work.pdf"
+        src="/design-work"
         className="w-full h-screen border-0"
         title="Portfolio PDF"
       />
