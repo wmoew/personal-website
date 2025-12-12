@@ -9,7 +9,7 @@ export default function DesignCaseStudyPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === 'work') {
+    if (password === process.env.NEXT_PUBLIC_DESIGN_PASSWORD) {
       setIsUnlocked(true);
       setError('');
     } else {
@@ -52,7 +52,12 @@ export default function DesignCaseStudyPage() {
       <iframe
         src="/design-work"
         className="w-full h-screen border-0"
-        title="Portfolio PDF"
+        title="Design Work"
+      />
+      <iframe
+        src="/design-work.pdf" 
+        className="w-full h-screen border-0"
+        title="Design Work"
       />
     </div>
   );

@@ -161,7 +161,6 @@
   
   /* Light mode links */
   a {
-    text-decoration: underline; 
     color: theme("colors.zinc-900"); 
   }
   .dark a {
