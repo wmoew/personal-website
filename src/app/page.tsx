@@ -165,14 +165,6 @@ export default function Home() {
             <div className="space-y-4">
               <div>
                 <div className="">
-                Master of Science in Computer Science (OMSCS)
-                </div>
-                <p className="text-sm font-medium text-zinc-500">
-                Georgia Institute of Technology | Aug 2026 - Expected 2028
-                </p>
-              </div>
-              <div>
-                <div className="">
                 Master of Science in Integrated Digital Media
                 </div>
                 <p className="text-sm font-medium text-zinc-500">
@@ -276,13 +268,6 @@ const skillCategories: SkillCategory[] = [
     skills: [
       "Retrieval-Augmented Generation (RAG)",
       "AI-assisted workflow automation and tooling",
-    ],
-  },
-  {
-    title: "Currently Deepening (OMSCS Coursework)",
-    skills: [
-      "Operating Systems: concurrency, scheduling, memory management",
-      "Database Systems: relational design, transactions, query optimization",
     ],
   },
 ];
