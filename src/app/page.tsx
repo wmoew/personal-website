@@ -61,11 +61,11 @@ export default function Home() {
         <section className="flex items-center h-auto py-8 md:py-20">
         <div className="container w-full">
               <h2 className="text-3xl md:text-4xl font-normal mb-24">
-              Hi! I&apos;m Moe, a software engineer. I build applications that
+              Hi! I&apos;m Moe, a software engineer with professional and open-source experience building infrastructure and engineer-facing platforms &mdash; containerized systems, observability tooling, and AI-assisted workflow automation. I build applications that
               <span className="rainbow-text">
               {""} work well and feel good to use
-              </span>. 
-              I work with React, Node.js, and monitoring/DevOps tools, with experience across fintech, healthcare, and education. I&apos;m currently open to new opportunities.
+              </span>,
+              with experience across fintech, healthcare, and education, and I&apos;m comfortable across the stack in JavaScript/TypeScript, with backend experience in Python and Java. I&apos;m currently open to new opportunities.
               </h2>
           </div>
         </section>
@@ -75,27 +75,24 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-normal mb-16">
             Technologies
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pl-4">
-            <div>
-              <h3 className="text-sm font-medium text-zinc-500 mb-2">Languages</h3>
-              <p>JavaScript / TypeScript, Python</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-zinc-500 mb-2">Frontend</h3>
-              <p>React, Redux, Next.js, Material UI</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-zinc-500 mb-2">Backend</h3>
-              <p>Node.js, PostgreSQL, REST APIs</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-zinc-500 mb-2">DevOps</h3>
-              <p>Docker, Grafana, Prometheus, OpenTelemetry</p>
-            </div>
-            <div>
-              <h3 className="text-sm font-medium text-zinc-500 mb-2">Tools</h3>
-              <p>Git, Jaeger, Unity3D, Figma</p>
-            </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 pl-4">
+            {skillCategories.map((category) => (
+              <div key={category.title}>
+                <h3 className="text-sm font-medium text-zinc-500 mb-3">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-sm px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
         {/*resume*/}
@@ -142,7 +139,11 @@ export default function Home() {
     <span className="ml-2">| {experience.period}</span>
   </span>
 </p>
-
+{experience.description && (
+  <p className="text-sm mb-2 italic text-zinc-500">
+    {experience.description}
+  </p>
+)}
               <ul className="space-y-2 pl-5 text-base">
                 {experience.responsibilities.map((responsibility, index) => (
                   <li key={index} className="flex">
@@ -161,6 +162,14 @@ export default function Home() {
             Education
             </h2>
             <div className="space-y-4">
+              <div>
+                <div className="">
+                Master of Science in Computer Science (OMSCS)
+                </div>
+                <p className="text-sm font-medium text-zinc-500">
+                Georgia Institute of Technology | Aug 2026 - Expected 2028
+                </p>
+              </div>
               <div>
                 <div className="">
                 Master of Science in Integrated Digital Media
@@ -190,52 +199,89 @@ interface Experience {
   codeUrl?: string;
   portfolioUrl?: string;
   period: string;
+  description?: string;
   responsibilities: string[];
 }
 
 const experiences: Experience[] = [
   {
     role: "Software Engineer",
-    company: "QueryHawk",
+    company: "Queryhawk, OS Labs Open Source Fellowship",
     codeUrl: "https://github.com/oslabs-beta/QueryHawk",
     period: "Dec 2024 - Present",
+    description: "Open-source database monitoring platform, built with a 5-engineer fellowship team",
     responsibilities: [
-      "Architected and implemented a containerized database monitoring solution using Docker, Grafana, and Prometheus, enabling dynamic PostgreSQL connection management and automated service discovery that reduced development cycles by 35% and allowed teams to identify performance bottlenecks",
-      "Developed the Automated Performance Analytics Platform utilizing Prometheus with OpenTelemetry integration that reduced monitoring setup time from hours to minutes while providing comprehensive, real-time performance insights for database query optimization",
-      "Built a Grafana monitoring solution with automated provisioning using YAML-based configuration files and Grafana Provisioning API, creating specialized dashboards that automatically set up data sources upon initialization, saving 3-4 hours per installation",
-      "Led the team to implement Material UI's theming system and styled components for creating a cohesive React wrapper around Grafana dashboards and Jaeger UI, resulting in a unified monitoring experience with consistent visual language",
+      "Architected and shipped a production-ready, containerized database monitoring system (Docker, Grafana, Prometheus) with dynamic PostgreSQL connection management and automated service discovery",
+      "Built a standardized Prometheus metric collection pipeline on OpenTelemetry, cutting monitoring setup time from hours to minutes and giving engineers real-time query optimization insight",
+      "Automated Grafana provisioning via YAML and the Provisioning API so dashboards self-configure their data sources on initialization, saving 3-4 hours per installation",
+      "Led front-end architecture with React, TypeScript, and Material UI theming, delivering a consistent, reusable component wrapper across complex, data-dense dashboards",
     ],
   },
   {
-    role: "Software Engineer",
-    company: "ArtExplorer - Interactive Museum Art Display",
-    codeUrl: "https://github.com/wmoew/art-homepage",
-    period: "Nov 2024",
-    responsibilities: [
-      "Developed a responsive React application using custom hooks and context API to create an immersive browsing experience for the Metropolitan Museum of Art's public API",
-      "Implemented Redux Toolkit with createAsyncThunk for efficient API requests, reducing response times by 40% through selective data fetching",
-      "Built persistent storage solution with Redux-Persist and localStorage, enabling users to build and revisit their curated art gallery across browser sessions"
-    ],
-  },
-  {
-    role: "Senior Product Designer",
+    role: "Product Designer",
     company: "Amount",
     portfolioUrl: "/design-work.pdf",
     period: "Jun 2021 - Sep 2023",
     responsibilities: [
-      "Built modular React design system with component composability and CSS-in-JS, enabling rapid white-labeling that cut client implementation from months to weeks",
-      "Partnered with backend engineers on data-driven UI components for complex decision engines, implementing attribute grouping that mirrored database relationships",
-      "Collaborated with engineers to transform complex loan evaluation workflows into an intuitive diagram-based platform using ReactFlow, enabling non-technical users to visually create and modify decision rules",
+      "Partnered with backend engineers to turn complex loan-evaluation decision engines into a visual, ReactFlow-based rules platform, letting non-technical users create and modify logic directly",
+      "Built a modular React design system with component composability and CSS-in-JS, cutting client implementation time from months to weeks",
+      "Implemented attribute grouping in data-driven UI components that mirrored underlying database relationships for complex decision engines",
     ],
   },
   {
     role: "UX Designer",
-    company: "MIT Optics Lab",
+    company: "MIT Optics Lab, Cambridge, MA",
     period: "Feb 2021 - Jun 2021",
     responsibilities: [
-      "Designed VR/desktop educational games in Unity3D/C# for fiber optics manufacturing training, reducing costly errors while complementing traditional factory instruction",
-      "Collaborated with physics professors to implement accurate optical interactions using Unity's physics engine and shader programming, balancing scientific precision with intuitive gameplay",
-      "Led 20+ user testing sessions with community college students, leveraging Unity Analytics and qualitative feedback to optimize interactions, resulting in 30% improved completion rates for training modules",
+      "Built VR/desktop training simulations in Unity3D/C#, collaborating with physics faculty to model optical interactions accurately",
+      "Ran 20+ user-testing sessions using Unity Analytics, improving completion rates 30%",
     ],
   },
-]; 
+];
+
+interface SkillCategory {
+  title: string;
+  skills: string[];
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: "Frontend",
+    skills: [
+      "JavaScript", "TypeScript", "React", "Redux", "React-Router",
+      "HTML", "CSS", "Tailwind", "Material UI", "Vite", "Webpack",
+    ],
+  },
+  {
+    title: "Backend & Systems",
+    skills: [
+      "Node.js", "Express", "Python", "Java", "PostgreSQL",
+      "MongoDB", "Supabase", "JWT",
+    ],
+  },
+  {
+    title: "DevOps & Observability",
+    skills: [
+      "AWS", "Docker", "Kubernetes", "Grafana", "OpenTelemetry",
+      "Prometheus", "Jaeger", "Git", "GitHub", "GitHub Actions", "Jenkins",
+    ],
+  },
+  {
+    title: "Testing",
+    skills: ["Jest", "pytest"],
+  },
+  {
+    title: "AI/ML",
+    skills: [
+      "Retrieval-Augmented Generation (RAG)",
+      "AI-assisted workflow automation and tooling",
+    ],
+  },
+  {
+    title: "Currently Deepening (OMSCS Coursework)",
+    skills: [
+      "Operating Systems: concurrency, scheduling, memory management",
+      "Database Systems: relational design, transactions, query optimization",
+    ],
+  },
+];
