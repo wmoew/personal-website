@@ -61,40 +61,15 @@ export default function Home() {
         <section className="flex items-center h-auto py-8 md:py-20">
         <div className="container w-full">
               <h2 className="text-3xl md:text-4xl font-normal mb-24">
-              Hi! I&apos;m Moe, a software engineer with professional and open-source experience building infrastructure and engineer-facing platforms &mdash; containerized systems, observability tooling, and AI-assisted workflow automation. I build applications that
+              Hi! I&apos;m Moe, a software engineer building infrastructure and engineer-facing platforms. I build applications that
               <span className="rainbow-text">
               {""} work well and feel good to use
               </span>,
-              with experience across fintech, healthcare, and education, and I&apos;m comfortable across the stack in JavaScript/TypeScript, with backend experience in Python and Java. I&apos;m currently open to new opportunities.
+              mainly in JavaScript/TypeScript, with backend experience in Python and Java. I&apos;m currently open to new opportunities.
               </h2>
           </div>
         </section>
 
-        {/* Skills/Technologies Section */}
-        <section className="mb-12">
-          <h2 className="text-3xl md:text-4xl font-normal mb-16">
-            Technologies
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 pl-4">
-            {skillCategories.map((category) => (
-              <div key={category.title}>
-                <h3 className="text-sm font-medium text-zinc-500 mb-3">
-                  {category.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="text-sm px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]"
-                    >
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
         {/*resume*/}
         <section className="mb-12">
           <h2 className="text-3xl md:text-4xl font-normal mb-16">Experience
@@ -157,19 +132,37 @@ export default function Home() {
             </div>
         </section>
 
+        {/* Skills/Technologies Section */}
+        <section className="mb-12">
+          <h2 className="text-3xl md:text-4xl font-normal mb-16">
+            Technologies
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8 pl-4">
+            {skillCategories.map((category) => (
+              <div key={category.title}>
+                <h3 className="text-sm font-medium text-zinc-500 mb-3">
+                  {category.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="text-sm px-3 py-1 rounded-full border border-[var(--border)] bg-[var(--card-bg)]"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
           <section>
             <h2 className="text-3xl md:text-4xl font-normal mb-16 font-['EB_Garamond']">
             Education
             </h2>
             <div className="space-y-4">
-              <div>
-                <div className="">
-                Master of Science in Computer Science (OMSCS)
-                </div>
-                <p className="text-sm font-medium text-zinc-500">
-                Georgia Institute of Technology | Aug 2026 - Expected 2028
-                </p>
-              </div>
               <div>
                 <div className="">
                 Master of Science in Integrated Digital Media
@@ -275,13 +268,6 @@ const skillCategories: SkillCategory[] = [
     skills: [
       "Retrieval-Augmented Generation (RAG)",
       "AI-assisted workflow automation and tooling",
-    ],
-  },
-  {
-    title: "Currently Deepening (OMSCS Coursework)",
-    skills: [
-      "Operating Systems: concurrency, scheduling, memory management",
-      "Database Systems: relational design, transactions, query optimization",
     ],
   },
 ];
