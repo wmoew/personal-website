@@ -165,6 +165,14 @@ export default function Home() {
             <div className="space-y-4">
               <div>
                 <div className="">
+                Master of Science in Computer Science
+                </div>
+                <p className="text-sm font-medium text-zinc-500">
+                Georgia Institute of Technology | Aug 2026 - Expected 2028
+                </p>
+              </div>
+              <div>
+                <div className="">
                 Master of Science in Integrated Digital Media
                 </div>
                 <p className="text-sm font-medium text-zinc-500">
