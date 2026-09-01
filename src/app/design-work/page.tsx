@@ -37,7 +37,7 @@ export default function DesignCaseStudyPage() {
             {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
             <button
               type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors font-medium"
+              className="w-full bg-black text-white py-3 rounded-md hover:bg-zinc-800 transition-colors font-medium"
             >
               Submit
             </button>
