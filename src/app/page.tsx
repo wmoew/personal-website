@@ -221,7 +221,7 @@ const experiences: Experience[] = [
   {
     role: "Product Designer",
     company: "Amount",
-    portfolioUrl: "/design-work.pdf",
+    portfolioUrl: "/design-work",
     period: "Jun 2021 - Sep 2023",
     responsibilities: [
       "Partnered with backend engineers to turn complex loan-evaluation decision engines into a visual, ReactFlow-based rules platform, letting non-technical users create and modify logic directly",
