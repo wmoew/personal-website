@@ -210,7 +210,7 @@ const experiences: Experience[] = [
     company: "Queryhawk, OS Labs Open Source Fellowship",
     codeUrl: "https://github.com/oslabs-beta/QueryHawk",
     period: "Dec 2024 - Present",
-    description: "Open-source database monitoring platform, built with a 5-engineer fellowship team",
+    description: "Open-source database monitoring platform, built with a 4-engineer fellowship team",
     responsibilities: [
       "Architected and shipped a production-ready, containerized database monitoring system (Docker, Grafana, Prometheus) with dynamic PostgreSQL connection management and automated service discovery",
       "Built a standardized Prometheus metric collection pipeline on OpenTelemetry, cutting monitoring setup time from hours to minutes and giving engineers real-time query optimization insight",
